@@ -1,0 +1,1 @@
+This C# application controls the 'Betsy' LED sign hanging in the Hacklab.

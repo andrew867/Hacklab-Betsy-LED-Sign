@@ -1,0 +1,26 @@
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Debug\Betsy1.exe.config
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.csprojResolveAssemblyReference.cache
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.Form1.resources
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.Properties.Resources.resources
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.csproj.GenerateResource.Cache
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Debug\Betsy1.exe
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Debug\Betsy1.pdb
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.exe
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Debug\Betsy1.pdb
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.dll
+c:\users\avatar-x\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Avatar-X\Documents\Visual Studio 2015\Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.dll
+C:\Users\Avatar-X\Documents\Visual Studio 2015\Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.pdb
+C:\source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Betsy1.exe.config
+C:\source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.exe
+C:\source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.pdb
+C:\Source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.csprojResolveAssemblyReference.cache
+C:\Source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.Form1.resources
+C:\Source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.Properties.Resources.resources
+C:\Source\VB\C# Projects\Betsy1\Betsy1\obj\Debug\Betsy1.csproj.GenerateResource.Cache
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Betsy1.exe
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Betsy1.pdb
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.dll
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.dll
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.pdb
+C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.xml

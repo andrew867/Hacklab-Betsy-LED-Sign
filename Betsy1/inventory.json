@@ -1,0 +1,1140 @@
+﻿{
+  "inventory": [
+    {
+      "serial_number": 1,
+      "mac": "00-04-A3-1B-93-38",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9338",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 2,
+      "mac": "00-04-A3-1B-93-2B",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932b",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 4,
+      "mac": "00-04-A3-1B-91-C4",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c4",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 5,
+      "mac": "00-04-A3-1B-91-C8",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c8",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 6,
+      "mac": "00-04-A3-1B-91-B6",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b6",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 7,
+      "mac": "00-04-A3-1B-90-22",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9022",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 8,
+      "mac": "00-04-A3-1B-91-BD",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91bd",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 9,
+      "mac": "00-04-A3-1B-93-16",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9316",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 10,
+      "mac": "00-04-A3-1B-93-34",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9334",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 11,
+      "mac": "00-04-A3-1B-91-B9",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b9",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 12,
+      "mac": "00-04-A3-1B-93-25",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9325",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 13,
+      "mac": "00-04-A3-1B-91-BA",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ba",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 14,
+      "mac": "00-04-A3-1B-93-29",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9329",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 15,
+      "mac": "00-04-A3-1B-91-C3",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c3",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 16,
+      "mac": "00-04-A3-1B-91-B5",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b5",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 17,
+      "mac": "00-04-A3-1B-90-0B",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:900b",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 18,
+      "mac": "00-04-A3-1B-93-23",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9323",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 19,
+      "mac": "00-04-A3-1B-93-22",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9322",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 20,
+      "mac": "00-04-A3-1B-93-3F",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:933f",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 21,
+      "mac": "00-04-A3-1B-91-DB",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91db",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 22,
+      "mac": "00-04-A3-1B-90-09",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9009",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 23,
+      "mac": "00-04-A3-1B-93-37",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9337",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 24,
+      "mac": "00-04-A3-1B-91-CF",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91cf",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 25,
+      "mac": "00-04-A3-1B-90-16",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9016",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 26,
+      "mac": "00-04-A3-1B-90-0F",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:900f",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 27,
+      "mac": "00-04-A3-1B-93-24",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9324",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 28,
+      "mac": "00-04-A3-1B-91-BB",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91bb",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 29,
+      "mac": "00-04-A3-1B-93-2C",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932c",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 30,
+      "mac": "00-04-A3-1B-91-CA",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ca",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 31,
+      "mac": "00-04-A3-1B-91-D0",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d0",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 32,
+      "mac": "00-04-A3-1B-91-C2",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c2",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 33,
+      "mac": "00-04-A3-1B-90-1A",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:901a",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 34,
+      "mac": "00-04-A3-1B-91-C7",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c7",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 35,
+      "mac": "00-04-A3-1B-91-D3",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d3",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 36,
+      "mac": "00-04-A3-1B-93-3D",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:933d",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 37,
+      "mac": "00-04-A3-1B-93-19",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9319",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 38,
+      "mac": "00-04-A3-1B-91-C1",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c1",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 40,
+      "mac": "00-04-A3-1B-93-32",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9332",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 43,
+      "mac": "00-04-A3-1B-91-CC",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91cc",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 45,
+      "mac": "00-04-A3-1B-93-1C",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:931c",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 46,
+      "mac": "00-04-A3-1B-91-D2",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d2",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 49,
+      "mac": "00-04-A3-1B-91-E1",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91e1",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 51,
+      "mac": "00-04-A3-1B-91-B8",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b8",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 53,
+      "mac": "00-04-A3-1B-93-2E",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932e",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 54,
+      "mac": "00-04-A3-1B-91-C0",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c0",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 55,
+      "mac": "00-04-A3-1B-91-C9",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c9",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 57,
+      "mac": "00-04-A3-1B-91-C6",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c6",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 58,
+      "mac": "00-04-A3-1B-93-30",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9330",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 60,
+      "mac": "00-04-A3-1B-91-ED",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ed",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 62,
+      "mac": "00-04-A3-1B-91-D9",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d9",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 64,
+      "mac": "00-04-A3-1B-91-DD",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91dd",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 65,
+      "mac": "00-04-A3-1B-91-CE",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ce",
+      "itc_revision": "0.2"
+    },
+    {
+      "serial_number": 101,
+      "mac": "00-04-A3-1B-93-DD",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:93dd",
+      "itc_revision": "0.3"
+    },
+    {
+      "serial_number": 104,
+      "mac": "00-04-A3-1B-92-A1",
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:92a1",
+      "itc_revision": "0.3"
+    }
+  ],
+  "tilemap": [
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91cc",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        0
+      ],
+      "stop": [
+        18,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9325",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        18
+      ],
+      "stop": [
+        18,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:900b",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        36
+      ],
+      "stop": [
+        18,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c6",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        54
+      ],
+      "stop": [
+        18,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9330",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        72
+      ],
+      "stop": [
+        18,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b6",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        0,
+        90
+      ],
+      "stop": [
+        18,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d3",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        0
+      ],
+      "stop": [
+        36,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b5",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        18
+      ],
+      "stop": [
+        36,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b9",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        36
+      ],
+      "stop": [
+        36,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ce",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        54
+      ],
+      "stop": [
+        36,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9323",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        72
+      ],
+      "stop": [
+        36,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:92a1",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        18,
+        90
+      ],
+      "stop": [
+        36,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91bd",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        0
+      ],
+      "stop": [
+        54,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c3",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        18
+      ],
+      "stop": [
+        54,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:931c",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        36
+      ],
+      "stop": [
+        54,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d2",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        54
+      ],
+      "stop": [
+        54,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c9",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        72
+      ],
+      "stop": [
+        54,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91cf",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        36,
+        90
+      ],
+      "stop": [
+        54,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9319",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        0
+      ],
+      "stop": [
+        72,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91db",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        18
+      ],
+      "stop": [
+        72,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c8",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        36
+      ],
+      "stop": [
+        72,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d9",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        54
+      ],
+      "stop": [
+        72,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:901a",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        72
+      ],
+      "stop": [
+        72,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ba",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        54,
+        90
+      ],
+      "stop": [
+        72,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:900f",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        0
+      ],
+      "stop": [
+        90,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9338",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        18
+      ],
+      "stop": [
+        90,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c7",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        36
+      ],
+      "stop": [
+        90,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9316",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        54
+      ],
+      "stop": [
+        90,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932b",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        72
+      ],
+      "stop": [
+        90,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9329",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        72,
+        90
+      ],
+      "stop": [
+        90,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ca",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        0
+      ],
+      "stop": [
+        108,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9016",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        18
+      ],
+      "stop": [
+        108,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9337",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        36
+      ],
+      "stop": [
+        108,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932e",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        54
+      ],
+      "stop": [
+        108,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c4",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        72
+      ],
+      "stop": [
+        108,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91d0",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        90,
+        90
+      ],
+      "stop": [
+        108,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91dd",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        0
+      ],
+      "stop": [
+        126,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91e1",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        18
+      ],
+      "stop": [
+        126,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:933f",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        36
+      ],
+      "stop": [
+        126,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9322",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        54
+      ],
+      "stop": [
+        126,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91b8",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        72
+      ],
+      "stop": [
+        126,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:932c",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        108,
+        90
+      ],
+      "stop": [
+        126,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:933d",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        0
+      ],
+      "stop": [
+        144,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9332",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        18
+      ],
+      "stop": [
+        144,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c0",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        36
+      ],
+      "stop": [
+        144,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9022",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        54
+      ],
+      "stop": [
+        144,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c2",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        72
+      ],
+      "stop": [
+        144,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9334",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        126,
+        90
+      ],
+      "stop": [
+        144,
+        108
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9324",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        0
+      ],
+      "stop": [
+        162,
+        18
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91ed",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        18
+      ],
+      "stop": [
+        162,
+        36
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91bb",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        36
+      ],
+      "stop": [
+        162,
+        54
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:93dd",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        54
+      ],
+      "stop": [
+        162,
+        72
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:91c1",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        72
+      ],
+      "stop": [
+        162,
+        90
+      ]
+    },
+    {
+      "ipv6_link_local": "fe80::204:a3ff:fe1b:9009",
+      "size": [
+        18,
+        18
+      ],
+      "start": [
+        144,
+        90
+      ],
+      "stop": [
+        162,
+        108
+      ]
+    }
+  ]
+}

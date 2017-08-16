@@ -1,0 +1,13 @@
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\Betsy1.exe.config
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\Betsy1.exe
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\Betsy1.pdb
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\DirectShowLib.dll
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\Newtonsoft.Json.dll
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\DirectShowLib.pdb
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\bin\Release\Newtonsoft.Json.xml
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.csprojResolveAssemblyReference.cache
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.Form1.resources
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.Properties.Resources.resources
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.csproj.GenerateResource.Cache
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.exe
+C:\Users\Avatar-X\documents\visual studio 2015\Projects\Betsy1\Betsy1\obj\Release\Betsy1.pdb
