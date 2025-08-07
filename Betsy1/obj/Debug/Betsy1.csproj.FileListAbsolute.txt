@@ -24,3 +24,19 @@ C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.dll
 C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.dll
 C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\DirectShowLib.pdb
 C:\Source\VB\C# Projects\Betsy1\Betsy1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\Betsy1.exe.config
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\Betsy1.exe
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\Betsy1.pdb
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\DirectShowLib.dll
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\DirectShowLib.pdb
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.csproj.AssemblyReference.cache
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.exe.config
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.Form1.resources
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.Properties.Resources.resources
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.csproj.GenerateResource.cache
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.csproj.CoreCompileInputs.cache
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.csproj.Up2Date
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.exe
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\Debug\Betsy1.pdb

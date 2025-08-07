@@ -196,9 +196,6 @@ namespace Betsy1
             //MessageBox.Show("Starting");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
@@ -284,7 +281,7 @@ namespace Betsy1
                     Buffer.BlockCopy(pLayers[i].pData, 0, Betsy.pixData, 0, Betsy.LWIDTH * Betsy.LHEIGHT * 3);
                 }
 
-                //showLayerOnPBox(i);
+                showLayerOnPBox(i);
 
             }
 
@@ -412,24 +409,6 @@ namespace Betsy1
             } 
         }
 
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            //sendToTile(0, e.Location.X, e.Location.Y);
-        }
-
-        
 
         void plasmaEffect()
         {
@@ -601,7 +580,23 @@ namespace Betsy1
 
         private void VideoPlayer_DoWork(object sender, DoWorkEventArgs e)
         {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "MKV files (*.mkv)|*.mkv|All Files|*.*";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+
+            string selectedFileName = openFileDialog1.FileName;
+
+
+
+            //DirectShow CLSID for media 
             Type comType = Type.GetTypeFromCLSID(new Guid("e436ebb3-524f-11ce-9f53-0020af0ba770"));
             IGraphBuilder graphBuilder = (IGraphBuilder)Activator.CreateInstance(comType);
 
@@ -611,6 +606,7 @@ namespace Betsy1
             IBasicAudio basicAudio = (IBasicAudio)graphBuilder;
             IBasicVideo basicVideo = (IBasicVideo)graphBuilder;
 
+            //Video frame Simple Grabber CLSID
             comType = Type.GetTypeFromCLSID(new Guid("C1F400A0-3F08-11d3-9F0B-006008039E37"));
             ISampleGrabber sampleGrabber = (ISampleGrabber)Activator.CreateInstance(comType);
 
@@ -623,31 +619,7 @@ namespace Betsy1
 
             graphBuilder.AddFilter((IBaseFilter)sampleGrabber, "Render");
 
-            String video = @"W:\Videos\TV Shows\Silicon Valley\1x01 - Minimum Viable Product.mkv";
-            video = @"W:\Videos\movies\Teenage Mutant Ninja Turtles II The Secret of the Ooze [1080p] (1991)\Teenage Mutant Ninja Turtles II The Secret of the Ooze [1080p].mkv";
-            // video = @"w:\Videos\TV Shows\Impractical Jokers\5x16 - Laundry Day.mkv"
-            video = @"W:\Videos\TV Shows\Star Trek\The Next Generation\3x26 - The Best of Both Worlds.mkv";
-            //video = @"c:\temp\duffless.mp4";
-            //video = @"C:\Users\Avatar-X\Videos\Moaning\2x01 - Art.mkv";
-            // int hr = graphBuilder.RenderFile(@"c:\temp\duffless.mp4", null);
-            //int hr = graphBuilder.RenderFile, null);
-            /*
-            ICaptureGraphBuilder2 captureGraphBuilder = new CaptureGraphBuilder2() as ICaptureGraphBuilder2;
-            IBaseFilter sourceFilter;
-
-            sourceFilter = FindCaptureDevice();
-            graphBuilder.AddFilter(sourceFilter, "Camera");
-            captureGraphBuilder.SetFiltergraph(graphBuilder);
-            captureGraphBuilder.RenderStream(PinCategory.Preview , MediaType.Video, sourceFilter, null, sampleGrabber as IBaseFilter );
-            Marshal.ReleaseComObject(sourceFilter);
-            */
-            video = @"W:\Videos\TV Shows\Simpsons\04x20 - Whacking Day.mp4";
-
-
-            int hr = graphBuilder.RenderFile(video, null);
-
-
-
+            int hr = graphBuilder.RenderFile(selectedFileName, null);
 
             seeker = (IMediaSeeking)graphBuilder;
 
@@ -708,7 +680,7 @@ namespace Betsy1
             hr = devEnum.CreateClassEnumerator(FilterCategory.VideoInputDevice, out classEnum, 0);
             Console.WriteLine("Create an enumerator for the video capture devices : " + DsError.GetErrorText(hr));
             DsError.ThrowExceptionForHR(hr);
-            Marshal.ReleaseComObject(devEnum);
+            //Marshal.ReleaseComObject(devEnum);
             if (classEnum == null)
             {
                 throw new ApplicationException("No video capture device was detected.\\r\\n\\r\\n" + "This sample requires a video capture device, such as a USB WebCam,\\r\\n" + "to be installed and working properly.  The sample will now close.");
@@ -726,8 +698,8 @@ namespace Betsy1
             {
                 throw new ApplicationException("Unable to access video capture device!");
             }
-            Marshal.ReleaseComObject(moniker[0]);
-            Marshal.ReleaseComObject(classEnum);
+            //Marshal.ReleaseComObject(moniker[0]);
+            //Marshal.ReleaseComObject(classEnum);
             return (IBaseFilter)source;
         }
         /*
@@ -863,166 +835,9 @@ namespace Betsy1
         {
             Betsy.setGain(100);
         }
-    }
 
-    public class cbMethods : ISampleGrabberCB
-    {
-        public Form1 myOwner;
-        public int vw;
-        public int vh;
-        public IMediaSeeking seeker;
-        public long seekTime = 0;
-        public SignLayer pLayer;
-
-        Bitmap bmp;
-        Graphics graph;
-        public cbMethods()
-        {
-            bmp = new Bitmap(162, 108);
-            graph = Graphics.FromImage(bmp);
-
-
-            graph.InterpolationMode = InterpolationMode.Bilinear;
-            graph.CompositingQuality = CompositingQuality.HighSpeed;
-            graph.SmoothingMode = SmoothingMode.HighSpeed;
-            
-            /*
-                         graph.InterpolationMode = InterpolationMode.High;
-                         graph.CompositingQuality = CompositingQuality.HighQuality;
-                         graph.SmoothingMode = SmoothingMode.AntiAlias;
-                         */
-
-
-        }
-
-
-        public int BufferCB(double SampleTime, IntPtr pBuffer, int BufferLen)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int SampleCB(double sampleTime, IMediaSample pSample)
-        {
-            int len = pSample.GetActualDataLength();
-            IntPtr pbuf;
-
-            long p1, p2, p3, howLate;
-            howLate = 0;
-
-            
-            pSample.GetTime(out p1, out p2);
-            seeker.GetCurrentPosition(out p3);
-            p1 += seekTime;
-
-            howLate = p3 - p1;
-            
-            Console.WriteLine("Got sample");
-            //
-            if (howLate > 0)
-            {
-                // Console.WriteLine("P1: " + p1 + " media: " + p3 + "Late " + howLate);
-                // Console.WriteLine("Skipping frame that is " + howLate + " late.");
-            }
-
-            if (pSample.GetPointer(out pbuf) == 0 && len > 0 && howLate <= 0 && vw > 0)
-            {
-                //byte[] buf = new byte[len];
-                //Marshal.Copy(pbuf, buf, 0, len);
-
-                /*
-                for (int i = 0; i < len; i += 2)
-                    buf[i] = (byte)(255 - buf[i]);
-                Marshal.Copy(buf, 0, pbuf, len);
-                */
-
-                // fill in rgbValues, e.g. with a for loop over an input array
-                var im = new Bitmap(vw, vh, 3 * vw,
-                         PixelFormat.Format24bppRgb,
-                         pbuf);
-
-                double s = Math.Max((double)162 / (double)vw, (double)108 / (double)vh);
-                int ow = (int)((double)vw * s);
-                int oh = (int)((double)vh * s);
-                int ox = (162 / 2) - (ow / 2);
-                int oy = (108 / 2) - (oh / 2);
-
-                graph.DrawImage(im, new Rectangle(ox, oy, ow, oh), 0, 0, vw, vh, GraphicsUnit.Pixel );
-
-                // myOwner.SetPic(bmp);
-
-                // Calculate where on our sign the video will go.
-                // 
-
-                BitmapData bData = bmp.LockBits(new Rectangle(0, 0, 162, 108), ImageLockMode.ReadOnly, bmp.PixelFormat);
-
-                /*the size of the image in bytes */
-                int size = bData.Stride * bData.Height;
-
-                /*Allocate buffer for image*/
-                byte[] data = new byte[size];
-
-                /*This overload copies data of /size/ into /data/ from location specified (/Scan0/)*/
-                System.Runtime.InteropServices.Marshal.Copy(bData.Scan0, data, 0, size);
-
-                int i;
-                for (int y = 0; y < bData.Height; ++y)
-                {
-                    for (int x = 0; x < bData.Width; ++x)
-                    {
-                        i = ((107 - y) * bData.Stride) + (x * 4);
-                        //data is a pointer to the first byte of the 3-byte color data
-                        if (i >= 0 && i < size)
-                        {
-                            pLayer.pData[x, y, 0] = data[i + 2]; // red
-                            pLayer.pData[x, y, 1] = data[i + 1]; // green
-                            pLayer.pData[x, y, 2] = data[i]; // blue
-                        }
-                    }
-                }
-
-                bmp.UnlockBits(bData);
-
-                /*
-                int i = 0;
-                for (int y = 0; y < 108; y++)
-                {
-                    int ys = vh - (int)((double)y / s);
-
-                    for (int x = 0; x < 162; x++)
-                    {
-                        // calculate the co-ordinates of this pixel in the source video.
-                        int xs = (int)((double)x / s);
-
-                        // index into the video
-                        i = (ys * vw * 3) + (xs * 3);
-                        if (i > 0 && i < len)
-                        {
-                            myOwner.pixData[x, y, 0] = buf[i + 2];
-                            myOwner.pixData[x, y, 1] = buf[i + 1];
-                            myOwner.pixData[x, y, 2] = buf[i + 0];
-                        }
-                    }
-                }
-                */
-
-
-                pLayer.lastPacket = DateTime.Now;
-                myOwner.drawNext();
-
-
-            }
-
-
-            /* other code */
-            Marshal.ReleaseComObject(pSample);
-            return 0;
-        }
 
     }
-
-
-    
-
 
 
 

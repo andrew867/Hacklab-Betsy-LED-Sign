@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -101,7 +102,7 @@ namespace Betsy1
             JObject item;
             JArray jTileMap;
 
-            jInv = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + @"\..\..\inventory.json"));
+            jInv = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + @"\inventory.json"));
             jInvItems = (JArray)jInv["inventory"];
 
             tileCount = jInvItems.Count;
@@ -164,7 +165,7 @@ namespace Betsy1
         public void DrawAll()
         {
             // Send the pixel data to all signs
-            if (!SignOnline) return; // Don't draw to the sign if the sign is offline!
+            //if (!SignOnline) return; // Don't draw to the sign if the sign is offline!
 
             for (int i = 0; i < tileCount; i++)
             {
@@ -182,7 +183,7 @@ namespace Betsy1
             int xOff = OffsetsX[tileID];
             int yOff = OffsetsY[tileID];
 
-            //Console.WriteLine("Sending to tile " + tileID, " offsets are " + xOff + ", " + yOff);
+            //Debug.WriteLine("Sending to tile " + tileID + " offsets are " + xOff + ", " + yOff);
 
             Byte[] imgData = new Byte[1944]; // 18 x 18 x 6 (16 bit);
 
