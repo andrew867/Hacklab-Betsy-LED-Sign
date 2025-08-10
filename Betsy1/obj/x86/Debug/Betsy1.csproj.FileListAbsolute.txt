@@ -8,7 +8,6 @@ C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\x86\Debug\Newtonsoft.Js
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\x86\Debug\DirectShowLib.pdb
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\bin\x86\Debug\Newtonsoft.Json.xml
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.csproj.AssemblyReference.cache
-C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.exe.config
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.Form1.resources
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.Properties.Resources.resources
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.csproj.GenerateResource.cache
@@ -19,3 +18,4 @@ C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.applic
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.csproj.Up2Date
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.exe
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.pdb
+C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.exe.config

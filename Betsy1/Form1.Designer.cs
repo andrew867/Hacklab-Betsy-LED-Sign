@@ -45,6 +45,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnStartDisplay = new System.Windows.Forms.Button();
+            this.btnSendTestData = new System.Windows.Forms.Button();
+            this.btnStartVideoMixer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trkIntensity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videoTrack)).BeginInit();
@@ -83,7 +86,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(180, 30);
             this.button4.TabIndex = 6;
-            this.button4.Text = "Play video file (MKV)";
+            this.button4.Text = "#3 Play video file (MKV)";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -212,11 +215,43 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "label4";
             // 
+            // btnStartDisplay
+            // 
+            this.btnStartDisplay.Location = new System.Drawing.Point(1112, 9);
+            this.btnStartDisplay.Name = "btnStartDisplay";
+            this.btnStartDisplay.Size = new System.Drawing.Size(120, 33);
+            this.btnStartDisplay.TabIndex = 19;
+            this.btnStartDisplay.Text = "#1 Start Display";
+            this.btnStartDisplay.UseVisualStyleBackColor = true;
+            this.btnStartDisplay.Click += new System.EventHandler(this.btnStartDisplay_Click);
+            // 
+            // btnSendTestData
+            // 
+            this.btnSendTestData.Location = new System.Drawing.Point(1238, 9);
+            this.btnSendTestData.Name = "btnSendTestData";
+            this.btnSendTestData.Size = new System.Drawing.Size(120, 33);
+            this.btnSendTestData.TabIndex = 20;
+            this.btnSendTestData.Text = "Send test data";
+            this.btnSendTestData.UseVisualStyleBackColor = true;
+            // 
+            // btnStartVideoMixer
+            // 
+            this.btnStartVideoMixer.Location = new System.Drawing.Point(1112, 48);
+            this.btnStartVideoMixer.Name = "btnStartVideoMixer";
+            this.btnStartVideoMixer.Size = new System.Drawing.Size(120, 33);
+            this.btnStartVideoMixer.TabIndex = 21;
+            this.btnStartVideoMixer.Text = "#2 Start Vmixer";
+            this.btnStartVideoMixer.UseVisualStyleBackColor = true;
+            this.btnStartVideoMixer.Click += new System.EventHandler(this.btnStartVideoMixer_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1710, 297);
+            this.Controls.Add(this.btnStartVideoMixer);
+            this.Controls.Add(this.btnSendTestData);
+            this.Controls.Add(this.btnStartDisplay);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -264,6 +299,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnStartDisplay;
+        private System.Windows.Forms.Button btnSendTestData;
+        private System.Windows.Forms.Button btnStartVideoMixer;
     }
 }
 

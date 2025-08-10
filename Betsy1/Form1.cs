@@ -79,10 +79,30 @@ namespace Betsy1
         public Form1()
         {
             InitializeComponent();
+            
 
+        }
 
-            Betsy = new HacklabBetsy("Any");
+        private void StartDisplay()
+        {
+            //Betsy = new HacklabBetsy("Any");
             //Betsy = new HacklabBetsy("fe80::a019:94b2:65ab:3113%16");
+            Betsy = new HacklabBetsy("fe80::1246:d064:bb87:b853%41");
+
+            Betsy.resetSign();
+
+            while (!Betsy.SignOnline)
+            {
+                Console.WriteLine("Waiting for Betsy reset");
+                Thread.Sleep(500);
+            }
+
+            Console.WriteLine("Betsy Online!");
+        }
+
+        private void InitVideoMixer()
+        {
+            //StartDisplay();
 
             // Define the layers.
             // Layer list:
@@ -90,7 +110,6 @@ namespace Betsy1
             // 1 - Local video or camera
             // 2 - TPM2.NET data
             // 3-6 - BMIX layers
-
 
             pLayers = new SignLayer[7];
             pBoxes = new PictureBox[pLayers.Length];
@@ -160,15 +179,20 @@ namespace Betsy1
 
             HLTime.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             HLFamily = new FontFamily("Tahoma");
-            HLFont = new Font(HLFamily, 12, FontStyle.Bold );
+            HLFont = new Font(HLFamily, 12, FontStyle.Bold);
             HLBrush = new SolidBrush(Color.White);
-            HLClearBrush = new SolidBrush(Color.FromArgb(0, 0, 0,0));
-            aTimer.Start();
+            HLClearBrush = new SolidBrush(Color.FromArgb(0, 0, 0, 0));
+
 
             //RenderThread = new Thread(new ThreadStart(RenderRun));
             //RenderThread.Start();
+            
+            //StartVideoMixer();
+        }
 
-
+        private void StartVideoMixer()
+        {
+            aTimer.Start();
         }
 
         private void RenderRun()
@@ -569,104 +593,167 @@ namespace Betsy1
             BackgroundWorker videoPlayer = new BackgroundWorker();
             videoPlayer.DoWork += VideoPlayer_DoWork;
 
-            videoPlayer.RunWorkerAsync();
-            */
+            videoPlayer.RunWorkerAsync(); */
 
-            VideoPlayer_DoWork(null, null);
+
+            StartFilePlaybackToLayer1();
 
 
 
         }
 
-        private void VideoPlayer_DoWork(object sender, DoWorkEventArgs e)
+        // Add this property to your FileToCallbackPlayer class if you haven't already
+        // public IMediaSeeking Seeker { get { return _seek; } }
+        // public bool TopDown { get; private set; } // set inside player from VIH.BmiHeader.Height < 0
+        // public int Width { get; private set; }    // already present
+        // public int Height { get; private set; }   // already present
+
+        private VideoCallbackPlayer.FileToCallbackPlayer _player;
+        private Betsy1.cbMethods _cb;
+        private void StartFilePlaybackToLayer1()
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (pLayers == null || pLayers.Length == 0) { InitVideoMixer(); StartVideoMixer(); }
 
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "MKV files (*.mkv)|*.mkv|All Files|*.*";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "C:\\";
+            ofd.Filter = "Media|*.mkv;*.mp4;*.avi;*.mov;*.wmv;*.mpg;*.mpeg|All files|*.*";
+            if (ofd.ShowDialog(this) != DialogResult.OK) { ofd.Dispose(); return; }
+            string path = ofd.FileName;
+            ofd.Dispose();
 
-            if (openFileDialog1.ShowDialog() != DialogResult.OK)
-            {
-                return;
-            }
+            if (_player != null) { _player.Dispose(); _player = null; }
+            _cb = null;
 
-            string selectedFileName = openFileDialog1.FileName;
+            _cb = new cbMethods();
+            _cb.myOwner = this;
+            _cb.pLayer = pLayers[1];
 
+            int w, h;
+            _player = VideoCallbackPlayer.FileToCallbackPlayer.Play(path, _cb, out w, out h);
 
+            // wire negotiated details
+            _cb.vw = _player.Width;
+            _cb.vh = _player.Height;
+            _cb.TopDown = !_player.TopDown;
+            _cb.seeker = _player.Seeker;
+            _cb.Subtype = _player.ConnectedSubtype;
 
-            //DirectShow CLSID for media 
-            Type comType = Type.GetTypeFromCLSID(new Guid("e436ebb3-524f-11ce-9f53-0020af0ba770"));
-            IGraphBuilder graphBuilder = (IGraphBuilder)Activator.CreateInstance(comType);
+            seeker = _player.Seeker;
+            sampBuf = _cb;
 
-            IMediaEventEx mediaEvent = (IMediaEventEx)graphBuilder;
-            IMediaControl mediaControl = (IMediaControl)graphBuilder;
-            IVideoWindow videoWindow = (IVideoWindow)graphBuilder;
-            IBasicAudio basicAudio = (IBasicAudio)graphBuilder;
-            IBasicVideo basicVideo = (IBasicVideo)graphBuilder;
+            _player.SetVolumeDb(0);
 
-            //Video frame Simple Grabber CLSID
-            comType = Type.GetTypeFromCLSID(new Guid("C1F400A0-3F08-11d3-9F0B-006008039E37"));
-            ISampleGrabber sampleGrabber = (ISampleGrabber)Activator.CreateInstance(comType);
-
-            
-            AMMediaType mediaType = new AMMediaType();
-            mediaType.majorType = MediaType.Video;
-            mediaType.subType = MediaSubType.RGB24;
-            mediaType.formatType = FormatType.VideoInfo;
-            sampleGrabber.SetMediaType(mediaType);
-
-            graphBuilder.AddFilter((IBaseFilter)sampleGrabber, "Render");
-
-            int hr = graphBuilder.RenderFile(selectedFileName, null);
-
-            seeker = (IMediaSeeking)graphBuilder;
-
-            videoWindow.put_AutoShow(OABool.True);
-            basicAudio.put_Volume(10000);
-
-            sampleGrabber.SetOneShot(false);
-            sampleGrabber.SetBufferSamples(false);
-
-            AMMediaType connectedMediaType = new AMMediaType();
-            sampleGrabber.GetConnectedMediaType(connectedMediaType);
-
-
-
-            // VideoInfoHeader videoHeader = (VideoInfoHeader)connectedMediaType.;
-
-            sampBuf = new cbMethods();
-            //sampBuf.myOwner = this;
-            basicVideo.get_VideoWidth(out sampBuf.vw);
-            basicVideo.get_VideoHeight(out sampBuf.vh);
-            sampBuf.seeker = seeker;
-            sampBuf.pLayer = pLayers[1];
-            sampBuf.myOwner = this;
-
-            Console.WriteLine("Video size: " + sampBuf.vw + ", " + sampBuf.vh);
-
-            //the same object has implemented the ISampleGrabberCB interface.
-            //0 sets the callback to the ISampleGrabberCB::SampleCB() method.
-            sampleGrabber.SetCallback(sampBuf, 0);
-
-            /*
-            sampBuf.vw = 1920;
-            sampBuf.vh = 1080;
-            */
-
-
-            mediaControl.Run();
-
-            /*
-            EventCode eventCode;
-            mediaEvent.WaitForCompletion(-1, out eventCode);
-            */
-
-            // Marshal.ReleaseComObject(sampleGrabber);
-            // Marshal.ReleaseComObject(graphBuilder);
-
+            // do not set pLayers[1].lastPacket here; callback will when non-black pixels are drawn
         }
+
+
+
+        //private void VideoPlayer_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+        //    openFileDialog1.InitialDirectory = "c:\\";
+        //    openFileDialog1.Filter = "All Files|*.*";
+        //    openFileDialog1.FilterIndex = 1;
+        //    openFileDialog1.RestoreDirectory = true;
+
+        //    if (openFileDialog1.ShowDialog() != DialogResult.OK)
+        //    {
+        //        return;
+        //    }
+
+        //    string selectedFileName = openFileDialog1.FileName;
+
+
+        ////    public static IBaseFilter AddFilterFromClsid(IGraphBuilder graphBuilder, Guid clsid, string name)
+        ////{
+        ////    int hr = 0;
+
+        ////    if (graphBuilder == null)
+        ////        throw new ArgumentNullException("graphBuilder");
+
+        ////    Type type = Type.GetTypeFromCLSID(clsid);
+        ////    IBaseFilter filter = (IBaseFilter)Activator.CreateInstance(type);
+
+        ////    hr = graphBuilder.AddFilter(filter, name);
+        ////    DsError.ThrowExceptionForHR(hr);
+
+        ////    return filter;
+        ////}
+
+        ////DirectShow CLSID for media 
+        //Type comType = Type.GetTypeFromCLSID(new Guid("{E436EBB6-524F-11CE-9F53-0020AF0BA770}"));
+        //    IGraphBuilder graphBuilder = (IGraphBuilder)Activator.CreateInstance(comType);
+
+        //    IMediaEventEx mediaEvent = (IMediaEventEx)graphBuilder;
+        //    IMediaControl mediaControl = (IMediaControl)graphBuilder;
+        //    IVideoWindow videoWindow = (IVideoWindow)graphBuilder;
+        //    IBasicAudio basicAudio = (IBasicAudio)graphBuilder;
+        //    IBasicVideo basicVideo = (IBasicVideo)graphBuilder;
+
+        //    //Video frame Simple Grabber CLSID
+        //    comType = Type.GetTypeFromCLSID(new Guid("C1F400A0-3F08-11d3-9F0B-006008039E37"));
+        //    ISampleGrabber sampleGrabber = (ISampleGrabber)Activator.CreateInstance(comType);
+
+        //    AMMediaType mediaType = new AMMediaType();
+        //    mediaType.majorType = MediaType.Video;
+        //    mediaType.subType = MediaSubType.RGB24;
+        //    mediaType.formatType = FormatType.VideoInfo;
+        //    sampleGrabber.SetMediaType(mediaType);
+
+        //    graphBuilder.AddFilter((IBaseFilter)sampleGrabber, "Render");
+
+        //    int hr = graphBuilder.RenderFile(selectedFileName, null);
+
+        //    seeker = (IMediaSeeking)graphBuilder;
+
+        //    videoWindow.put_AutoShow(OABool.True);
+        //    basicAudio.put_Volume(10000);
+
+        //    sampleGrabber.SetOneShot(false);
+        //    sampleGrabber.SetBufferSamples(false);
+
+        //    AMMediaType connectedMediaType = new AMMediaType();
+        //    sampleGrabber.GetConnectedMediaType(connectedMediaType);
+
+
+
+
+        //    // VideoInfoHeader videoHeader = (VideoInfoHeader)connectedMediaType.;
+
+        //    sampBuf = new cbMethods();
+        //    //sampBuf.myOwner = this;
+        //    basicVideo.get_VideoWidth(out sampBuf.vw);
+        //    basicVideo.get_VideoHeight(out sampBuf.vh);
+        //    Debug.WriteLine("basicVideo width " +sampBuf.vw);
+        //    sampBuf.seeker = seeker;
+        //    sampBuf.pLayer = pLayers[1];
+        //    sampBuf.myOwner = this;
+
+        //    Console.WriteLine("Video size: " + sampBuf.vw + ", " + sampBuf.vh);
+
+        //    //the same object has implemented the ISampleGrabberCB interface.
+        //    //0 sets the callback to the ISampleGrabberCB::SampleCB() method.
+        //    sampleGrabber.SetCallback(sampBuf, 0);
+
+        //    /*
+        //    sampBuf.vw = 1920;
+        //    sampBuf.vh = 1080;
+        //    */
+
+
+        //    mediaControl.Run();
+        //    Debug.WriteLine("Media started! "+mediaControl.ToString() );
+
+        //    /*
+        //    EventCode eventCode;
+        //    mediaEvent.WaitForCompletion(-1, out eventCode);
+        //    */
+
+        //    // Marshal.ReleaseComObject(sampleGrabber);
+        //    // Marshal.ReleaseComObject(graphBuilder);
+
+        //}
 
 
         public IBaseFilter FindCaptureDevice()
@@ -836,7 +923,16 @@ namespace Betsy1
             Betsy.setGain(100);
         }
 
+        private void btnStartDisplay_Click(object sender, EventArgs e)
+        {
+            StartDisplay();
+        }
 
+        private void btnStartVideoMixer_Click(object sender, EventArgs e)
+        {
+            InitVideoMixer();
+            StartVideoMixer();
+        }
     }
 
 

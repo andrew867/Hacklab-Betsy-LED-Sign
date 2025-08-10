@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using DirectShowLib.BDA;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -51,6 +52,7 @@ namespace Betsy1
         int[] OffsetsX; // X and Y offsets of each tile
         int[] OffsetsY;
         String[] TileAdr;
+        String[] TileSerial;
 
         // The width and height of the array.  This shouldn't be hard-coded actually.
         public int LWIDTH = 162;
@@ -92,7 +94,7 @@ namespace Betsy1
 
         private void setupBinds()
         {
-            
+
 
             IPEndPoint Binder = new IPEndPoint(bindIP, 0);
 
@@ -112,6 +114,7 @@ namespace Betsy1
             OffsetsX = new int[tileCount];
             OffsetsY = new int[tileCount];
             TileAdr = new String[tileCount];
+            TileSerial = new String[tileCount];
 
             for (int i = 0; i < tileCount; i++)
             {
@@ -122,7 +125,7 @@ namespace Betsy1
                 //      "ipv6_link_local": "fe80::204:a3ff:fe1b:932b",
                 //      "itc_revision": "0.2"
                 TileAdr[i] = (String)item["ipv6_link_local"];
-
+                TileSerial[i] = (String)item["serial_number"];
                 //Console.WriteLine("Tile " + i + ", address: " + TileAdr[i]);
 
                 Tiles[i] = IPAddress.Parse((String)item["ipv6_link_local"]);
@@ -135,22 +138,42 @@ namespace Betsy1
             ClientBroadcast = new UdpClient(Binder);
             ClientBroadcast.Connect(TilesBroadcast, 48757);
 
-            // Now parse the tile map.
-            jTileMap = (JArray)jInv["tilemap"];
-            for (int i = 0; i < jTileMap.Count; i++)
-            {
-                // Find this tile in the inventory and set the offset.
-                item = (JObject)jTileMap[i];
 
-                String ipAdr = (String)item["ipv6_link_local"];
-                for (int j = 0; j < tileCount; j++)
+            var newTileMap = (JArray)jInv["mapping"];
+            var newSettings = (JObject)jInv["settings"];
+
+            var tileSize = newSettings["dimensions"];
+            var tileSizeX = tileSize[0];
+            var tileSizeY = tileSize[1];
+            var gamma = newSettings["gamma"];
+
+            //Updated for new inventory.json format 2025-08-09 AG
+
+            //iterate over rows of panels
+            for(int i = 0; i < newTileMap.Count; i++)
+            {
+                //iterate through cols of panels for each row
+                var thisRow = (JArray)newTileMap[i];
+                for (int j = 0; j < thisRow.Count; j++)
                 {
-                    if (TileAdr[j] == ipAdr)
+                    var thisPanelSerial = (String)thisRow[j];
+
+
+                    var startX = (int)tileSizeX * j;
+                    var startY = (int)tileSizeY * i;
+
+                    for (int k = 0; k < tileCount; k++)
                     {
-                        OffsetsX[j] = (int)item["start"][0];
-                        OffsetsY[j] = (int)item["start"][1];
-                        break;
+                        if (TileSerial[k] == thisPanelSerial)
+                        {
+                            //Debug.WriteLine("This panel: " + thisPanelSerial + "XY: "+startX+" "+startY);
+                            OffsetsX[k] = startX;
+                            OffsetsY[k] = startY;
+                            break;
+                        }
                     }
+
+
                 }
 
             }
@@ -165,7 +188,11 @@ namespace Betsy1
         public void DrawAll()
         {
             // Send the pixel data to all signs
-            //if (!SignOnline) return; // Don't draw to the sign if the sign is offline!
+            if (!SignOnline)
+            {
+                //Debug.WriteLine("NOT drawing to sign panel");
+                return;
+            }
 
             for (int i = 0; i < tileCount; i++)
             {
