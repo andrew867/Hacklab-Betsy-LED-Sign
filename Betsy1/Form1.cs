@@ -589,24 +589,10 @@ namespace Betsy1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*
-            BackgroundWorker videoPlayer = new BackgroundWorker();
-            videoPlayer.DoWork += VideoPlayer_DoWork;
-
-            videoPlayer.RunWorkerAsync(); */
-
 
             StartFilePlaybackToLayer1();
 
-
-
         }
-
-        // Add this property to your FileToCallbackPlayer class if you haven't already
-        // public IMediaSeeking Seeker { get { return _seek; } }
-        // public bool TopDown { get; private set; } // set inside player from VIH.BmiHeader.Height < 0
-        // public int Width { get; private set; }    // already present
-        // public int Height { get; private set; }   // already present
 
         private VideoCallbackPlayer.FileToCallbackPlayer _player;
         private Betsy1.cbMethods _cb;
@@ -647,115 +633,6 @@ namespace Betsy1
         }
 
 
-
-        //private void VideoPlayer_DoWork(object sender, DoWorkEventArgs e)
-        //{
-        //    OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-        //    openFileDialog1.InitialDirectory = "c:\\";
-        //    openFileDialog1.Filter = "All Files|*.*";
-        //    openFileDialog1.FilterIndex = 1;
-        //    openFileDialog1.RestoreDirectory = true;
-
-        //    if (openFileDialog1.ShowDialog() != DialogResult.OK)
-        //    {
-        //        return;
-        //    }
-
-        //    string selectedFileName = openFileDialog1.FileName;
-
-
-        ////    public static IBaseFilter AddFilterFromClsid(IGraphBuilder graphBuilder, Guid clsid, string name)
-        ////{
-        ////    int hr = 0;
-
-        ////    if (graphBuilder == null)
-        ////        throw new ArgumentNullException("graphBuilder");
-
-        ////    Type type = Type.GetTypeFromCLSID(clsid);
-        ////    IBaseFilter filter = (IBaseFilter)Activator.CreateInstance(type);
-
-        ////    hr = graphBuilder.AddFilter(filter, name);
-        ////    DsError.ThrowExceptionForHR(hr);
-
-        ////    return filter;
-        ////}
-
-        ////DirectShow CLSID for media 
-        //Type comType = Type.GetTypeFromCLSID(new Guid("{E436EBB6-524F-11CE-9F53-0020AF0BA770}"));
-        //    IGraphBuilder graphBuilder = (IGraphBuilder)Activator.CreateInstance(comType);
-
-        //    IMediaEventEx mediaEvent = (IMediaEventEx)graphBuilder;
-        //    IMediaControl mediaControl = (IMediaControl)graphBuilder;
-        //    IVideoWindow videoWindow = (IVideoWindow)graphBuilder;
-        //    IBasicAudio basicAudio = (IBasicAudio)graphBuilder;
-        //    IBasicVideo basicVideo = (IBasicVideo)graphBuilder;
-
-        //    //Video frame Simple Grabber CLSID
-        //    comType = Type.GetTypeFromCLSID(new Guid("C1F400A0-3F08-11d3-9F0B-006008039E37"));
-        //    ISampleGrabber sampleGrabber = (ISampleGrabber)Activator.CreateInstance(comType);
-
-        //    AMMediaType mediaType = new AMMediaType();
-        //    mediaType.majorType = MediaType.Video;
-        //    mediaType.subType = MediaSubType.RGB24;
-        //    mediaType.formatType = FormatType.VideoInfo;
-        //    sampleGrabber.SetMediaType(mediaType);
-
-        //    graphBuilder.AddFilter((IBaseFilter)sampleGrabber, "Render");
-
-        //    int hr = graphBuilder.RenderFile(selectedFileName, null);
-
-        //    seeker = (IMediaSeeking)graphBuilder;
-
-        //    videoWindow.put_AutoShow(OABool.True);
-        //    basicAudio.put_Volume(10000);
-
-        //    sampleGrabber.SetOneShot(false);
-        //    sampleGrabber.SetBufferSamples(false);
-
-        //    AMMediaType connectedMediaType = new AMMediaType();
-        //    sampleGrabber.GetConnectedMediaType(connectedMediaType);
-
-
-
-
-        //    // VideoInfoHeader videoHeader = (VideoInfoHeader)connectedMediaType.;
-
-        //    sampBuf = new cbMethods();
-        //    //sampBuf.myOwner = this;
-        //    basicVideo.get_VideoWidth(out sampBuf.vw);
-        //    basicVideo.get_VideoHeight(out sampBuf.vh);
-        //    Debug.WriteLine("basicVideo width " +sampBuf.vw);
-        //    sampBuf.seeker = seeker;
-        //    sampBuf.pLayer = pLayers[1];
-        //    sampBuf.myOwner = this;
-
-        //    Console.WriteLine("Video size: " + sampBuf.vw + ", " + sampBuf.vh);
-
-        //    //the same object has implemented the ISampleGrabberCB interface.
-        //    //0 sets the callback to the ISampleGrabberCB::SampleCB() method.
-        //    sampleGrabber.SetCallback(sampBuf, 0);
-
-        //    /*
-        //    sampBuf.vw = 1920;
-        //    sampBuf.vh = 1080;
-        //    */
-
-
-        //    mediaControl.Run();
-        //    Debug.WriteLine("Media started! "+mediaControl.ToString() );
-
-        //    /*
-        //    EventCode eventCode;
-        //    mediaEvent.WaitForCompletion(-1, out eventCode);
-        //    */
-
-        //    // Marshal.ReleaseComObject(sampleGrabber);
-        //    // Marshal.ReleaseComObject(graphBuilder);
-
-        //}
-
-
         public IBaseFilter FindCaptureDevice()
         {
             Console.WriteLine("Start the Sub FindCaptureDevice");
@@ -785,26 +662,10 @@ namespace Betsy1
             {
                 throw new ApplicationException("Unable to access video capture device!");
             }
-            //Marshal.ReleaseComObject(moniker[0]);
-            //Marshal.ReleaseComObject(classEnum);
+
             return (IBaseFilter)source;
         }
-        /*
-        public void SetPic(Bitmap b)
-        {
-
-            if (pictureBox1.InvokeRequired)
-            {
-                SetPicCallback d = new SetPicCallback(SetPic);
-                this.Invoke(d, new object[] { b });
-            }
-            else
-            {
-                pictureBox1.Image = b;
-                pictureBox1.Refresh();
-            }
-        }
-        */
+        
 
         public void drawNext()
         {
@@ -837,73 +698,61 @@ namespace Betsy1
             SplitLinesCount = trackLines.Value;
         }
 
+        // Form1 fields (add if you don't have them yet)
+        private VideoCallbackPlayer.WebcamToCallbackPlayer _webcam;
+        private Betsy1.cbMethods _camCb;
+
+        // Convenience overload
+        private void StartWebcamToLayer1()
+        {
+            StartWebcamToLayer1(false); // no audio loopback by default
+        }
+
+        // Start webcam into layer 1; set previewAudio=true to hear the mic
+        private void StartWebcamToLayer1(bool previewAudio)
+        {
+            // Ensure mixer exists
+            if (pLayers == null || pLayers.Length == 0)
+            {
+                InitVideoMixer();
+                StartVideoMixer();
+            }
+
+            // Tear down any prior webcam session
+            if (_webcam != null) { _webcam.Dispose(); _webcam = null; }
+            _camCb = null;
+
+            // Build callback
+            _camCb = new Betsy1.cbMethods();
+            _camCb.myOwner = this;
+            _camCb.pLayer = pLayers[1];
+            _camCb.SetGracePeriod(500);   // allow early frames without timing drops
+
+            // Start webcam graph
+            int w, h;
+            _webcam = VideoCallbackPlayer.WebcamToCallbackPlayer.StartFirstCamera(_camCb, previewAudio, out w, out h);
+
+            // Wire negotiated details
+            _camCb.vw = _webcam.Width;
+            _camCb.vh = _webcam.Height;
+            _camCb.TopDown = !_webcam.TopDown;
+            _camCb.Subtype = _webcam.ConnectedSubtype;
+
+            // Flip if your panel shows it upside-down or mirrored
+            // _camCb.FlipVertical = true;
+            //_camCb.FlipHorizontal = true;
+
+            // No seeking for live sources
+            seeker = null;
+            sampBuf = _camCb;
+
+            if (previewAudio) _webcam.SetVolumeDb(0); // full volume on default device
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
 
-            Type comType = Type.GetTypeFromCLSID(new Guid("e436ebb3-524f-11ce-9f53-0020af0ba770"));
-            IGraphBuilder graphBuilder = (IGraphBuilder)Activator.CreateInstance(comType);
-
-            IMediaEventEx mediaEvent = (IMediaEventEx)graphBuilder;
-            IMediaControl mediaControl = (IMediaControl)graphBuilder;
-            IVideoWindow videoWindow = (IVideoWindow)graphBuilder;
-            IBasicAudio basicAudio = (IBasicAudio)graphBuilder;
-            IBasicVideo basicVideo = (IBasicVideo)graphBuilder;
-
-            comType = Type.GetTypeFromCLSID(new Guid("C1F400A0-3F08-11d3-9F0B-006008039E37"));
-            ISampleGrabber sampleGrabber = (ISampleGrabber)Activator.CreateInstance(comType);
-
-
-            AMMediaType mediaType = new AMMediaType();
-            mediaType.majorType = MediaType.Video;
-            mediaType.subType = MediaSubType.RGB24;
-            mediaType.formatType = FormatType.VideoInfo;
-            sampleGrabber.SetMediaType(mediaType);
-
-            graphBuilder.AddFilter((IBaseFilter)sampleGrabber, "Render");
-
-            ICaptureGraphBuilder2 captureGraphBuilder = new CaptureGraphBuilder2() as ICaptureGraphBuilder2;
-            IBaseFilter sourceFilter;
-
-            sourceFilter = FindCaptureDevice();
-            graphBuilder.AddFilter(sourceFilter, "Camera");
-            captureGraphBuilder.SetFiltergraph(graphBuilder);
-            captureGraphBuilder.RenderStream(PinCategory.Preview , MediaType.Video, sourceFilter, null,  sampleGrabber as IBaseFilter );
-            Marshal.ReleaseComObject(sourceFilter);
-
-            seeker = (IMediaSeeking)graphBuilder;
-
-            videoWindow.put_AutoShow(OABool.True);
-            basicAudio.put_Volume(10000);
-
-            sampleGrabber.SetOneShot(false);
-            sampleGrabber.SetBufferSamples(false);
-
-            AMMediaType connectedMediaType = new AMMediaType();
-            sampleGrabber.GetConnectedMediaType(connectedMediaType);
-
-
-
-            // VideoInfoHeader videoHeader = (VideoInfoHeader)connectedMediaType.;
-
-            sampBuf = new cbMethods();
-            basicVideo.get_VideoWidth(out sampBuf.vw);
-            basicVideo.get_VideoHeight(out sampBuf.vh);
-            sampBuf.seeker = seeker;
-            sampBuf.pLayer = pLayers[1];
-            sampBuf.myOwner = this;
-
-
-            Console.WriteLine("Video size: " + sampBuf.vw + ", " + sampBuf.vh);
-
-            //the same object has implemented the ISampleGrabberCB interface.
-            //0 sets the callback to the ISampleGrabberCB::SampleCB() method.
-            sampleGrabber.SetCallback(sampBuf, 0);
-
-            sampBuf.vw =  1920;
-            sampBuf.vh =  1080;
-
-
-            mediaControl.Run();
+            StartWebcamToLayer1(previewAudio: false); // set true if you want mic loopback
 
         }
 

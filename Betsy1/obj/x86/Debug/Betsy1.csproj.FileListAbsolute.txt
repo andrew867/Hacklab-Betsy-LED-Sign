@@ -18,4 +18,3 @@ C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.applic
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.csproj.Up2Date
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.exe
 C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.pdb
-C:\Users\andrew\vscode\Hacklab-Betsy-LED-Sign\Betsy1\obj\x86\Debug\Betsy1.exe.config
