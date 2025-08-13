@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Betsy1.exe" size="45536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Betsy1.exe" size="55776">
       <assemblyIdentity name="Betsy1" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>85SyJX5xgUaJiWj8G/VQHjpKdRYPUYsR4N7lPcNc+Os=</dsig:DigestValue>
+        <dsig:DigestValue>dpnn9qvVK1RjBhfxT1u/hd+syGEFcwWZ65LT/QwUjCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
